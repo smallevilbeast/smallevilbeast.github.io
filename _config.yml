@@ -1,0 +1,32 @@
+title: Evilbeast-Blog
+description: "evilbeast's blog"
+author:
+  name: "evilbeast"
+  email: "houshao55@gmail.com"
+  url: "https://www.github.com/smallevilbeast"
+
+baseurl: /
+
+source: .
+destination: ./_site
+permalink: /:title
+paginate: 3
+paginate_path: /page/:num/
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+future: true
+plugins:
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-sitemap
+
+# Custom variables
+owner : "evilbeast"
+year : "2023"
