@@ -1,32 +1,14 @@
-title: Evilbeast-Blog
-description: "evilbeast's blog"
-author:
-  name: "evilbeast"
-  email: "houshao55@gmail.com"
-  url: "https://www.github.com/smallevilbeast"
+url: //smallevilbeast.github.io
 
-baseurl: /
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
-source: .
-destination: ./_site
-permalink: /:title
-paginate: 3
-paginate_path: /page/:num/
+webrick:
+  headers:
+    Access-Control-Allow-Origin: "*"
 
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-
-future: true
 plugins:
-  - jekyll-seo-tag
-  - jekyll-paginate
-  - jekyll-sitemap
-
-# Custom variables
-owner : "evilbeast"
-year : "2023"
+  - jekyll-feed
+  

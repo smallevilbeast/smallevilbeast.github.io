@@ -1,6 +1,7 @@
 ---
+layout: post
 title: NTFS 文件系统挂载时的权限问题
-published: true
+categories: [Linux]
 ---
 
 用新的外星人笔记本安装了双系统， Linux 与 Windows 共用了一个数据分区 （ntfs 格式）， 凭着过往的经验， 在/etc/fstab 添加挂载

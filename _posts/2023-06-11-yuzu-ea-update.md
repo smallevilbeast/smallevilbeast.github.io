@@ -1,6 +1,7 @@
 ---
+layout: post
 title: yuzu 模拟器自动更新
-published: true
+categories: [yuzu]
 ---
 
 使用 shell 实现自动检测新版本并更新, 同时支持 zsh 和 bash

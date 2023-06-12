@@ -1,6 +1,8 @@
 ---
+layout: post
 title: lazycat-emacs 入门
-published: false
+published: true
+categories: [Emacs]
 ---
 
 ### 楔子
@@ -128,6 +130,7 @@ cdlazycat-emacs/site-lisp/extensions/emacs-application-framework
 | alt + shift + m | 剪切后一个分词|
 
 
+持续更新中....
 
 
 
