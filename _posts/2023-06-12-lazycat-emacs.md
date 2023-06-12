@@ -7,7 +7,7 @@ categories: [Emacs]
 
 ### 楔子
 
-初入 deepin 时， 看到[勇哥](https://manateelazycat.github.io/) 使用 emacs 写代码速度， 让当时用 eclipse 开发的我大吃一惊， emacs 竟然还可以这么玩， 在没见到勇哥之前感觉 emacs 就是个普通的编辑器， 当时就决定我要用上勇哥手上的 emacs， 再接下来的一周时间我就从编辑代码常用的功能开始， 差不到把 `init-key.el` 中的快捷键盘都按了一遍， 在使用上跟勇哥差不多达到了一致， 当时发了一个帖子 [emacs 要这样用](https://tieba.baidu.com/p/1402662061)， 但内功修炼上为 0， 毕竟还不会写一行 elisp， 仅仅当作工具用了。 在创业期间也用 emacs 完成了平台项目的开发， 在 2018 年买了小米游戏本用不了左边的`徽标键`后就没有在用 emacs 了， 再加上这几年代码量也少了， 主要以二进制分析为主， 再用 visual studio 写一些分析项目。 这几年看着勇哥又开发了 [emacs-application-framework](https://github.com/emacs-eaf/emacs-application-framework) 和 [lsp-bridge](https://github.com/manateelazycat/lsp-bridge.git) 让 emacs 在编辑功能跟 vscode 一个级别并且达到真正`live in emacs`的境界， 就想换个电脑重回 emacs, 在勇哥的推荐及下换上了 `alienware M16`， 安装上`ubuntu`后， 勇哥把 [lazycat-emacs](https://github.com/manateelazycat/lazycat-emacs) 帮我配置好后， 回到 emacs 感觉实在泰酷辣。 具体如何生活在 emacs 中， 请看勇哥的 [如何跟 emacs 达到身心合一](https://manateelazycat.github.io/emacs/2022/11/07/how-i-use-emacs.html)。
+初入 deepin 时， 看到[勇哥](https://manateelazycat.github.io/) 使用 emacs 写代码速度， 让当时用 eclipse 开发的我大吃一惊， emacs 竟然还可以这么玩， 在没见到勇哥之前感觉 emacs 就是个普通的编辑器， 当时就决定我要用上勇哥手上的 emacs， 再接下来的一周时间我就从编辑代码常用的功能开始， 差不到把 `init-key.el` 中的快捷键盘都按了一遍， 在使用上跟勇哥差不多达到了一致， 当时发了一个帖子 [emacs 要这样用](https://tieba.baidu.com/p/1402662061)， 但内功修炼上为 0， 毕竟还不会写一行 elisp， 仅仅当作工具用了。 在创业期间也用 emacs 完成了平台项目的开发， 在 2018 年买了小米游戏本用不了左边的`徽标键`后就没有在用 emacs 了， 再加上这几年代码量也少了， 主要以二进制分析为主， 再用 visual studio 写一些分析项目。 这几年看着勇哥又开发了 [emacs-application-framework](https://github.com/emacs-eaf/emacs-application-framework) 和 [lsp-bridge](https://github.com/manateelazycat/lsp-bridge.git) 让 emacs 在编辑功能跟 vscode 一个级别并且达到真正`live in emacs`的境界， 就想换个电脑重回 emacs, 在勇哥的推荐下换上了 `alienware M16`， 安装上`ubuntu`后， 勇哥把 [lazycat-emacs](https://github.com/manateelazycat/lazycat-emacs) 帮我配置好后， 回到 emacs 感觉实在泰酷辣。 具体如何生活在 emacs 中， 请看勇哥的 [如何跟 emacs 达到身心合一](https://manateelazycat.github.io/emacs/2022/11/07/how-i-use-emacs.html)。
 
 ### 安装`lazycat-emacs`
 
@@ -31,7 +31,7 @@ git clone --recursive https://github.com/manateelazycat/lazycat-emacs.git
 ```
 安装 eaf 项目插件
 ```
-cdlazycat-emacs/site-lisp/extensions/emacs-application-framework
+cd lazycat-emacs/site-lisp/extensions/emacs-application-framework
 ./install-eaf.py
 ```
 
@@ -130,12 +130,4 @@ cdlazycat-emacs/site-lisp/extensions/emacs-application-framework
 | alt + shift + m | 剪切后一个分词|
 
 
-持续更新中....
-
-
-
-
-
-
-
-
+持续更新中...
