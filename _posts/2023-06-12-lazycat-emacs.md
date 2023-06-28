@@ -82,7 +82,7 @@ cd lazycat-emacs/site-lisp/extensions/emacs-application-framework
 
 ### 启动 emacs 并安装所需语言的 treesit
 
-按下 `alt + x` 输入 `treesit-install-language-grammar` 安装所用语言的 treesit, 如 python, rust
+按下 `alt + x` 输入 `treesit-install-language-grammar` 安装所用语言的 treesit, 如 python, rust, vue
 
 
 ### 如何入门用 lazycat-emacs 编辑代码
@@ -115,6 +115,8 @@ cd lazycat-emacs/site-lisp/extensions/emacs-application-framework
 | ctrl + shift + e| 选中到行尾|
 | ctrl + shift + f| 选中前一个字符|
 | ctrl + shift + b| 选中后一个字符|
+| ctrl + shift + b| 选中后一个字符|
+| ctrl + x  h| 全选|
 
 3. 复制剪切粘贴删除
 
@@ -130,4 +132,78 @@ cd lazycat-emacs/site-lisp/extensions/emacs-application-framework
 | alt + shift + m | 剪切后一个分词|
 
 
-持续更新中...
+### 开发 EAF 扩展配置
+
+在`.emacs`中添加
+
+```lisp
+;; Support jump to define of EAF root from EAF application directory.
+(setq lsp-bridge-get-project-path-by-filepath
+      (lambda (filepath)
+        (when (string-prefix-p (expand-file-name "~/lazycat-emacs/site-lisp/extensions/emacs-application-framework/app") filepath)
+          (expand-file-name "~/lazycat-emacs/site-lisp/extensions/emacs-application-framework/"))))
+
+```
+
+
+### 导航诊断
+
+Python 中安装 ruff 
+```python
+pip install ruff-lsp pyright
+```
+[详情](https://github.com/manateelazycat/lazycat-emacs/blob/master/site-lisp/config/init-key.el#L536)
+
+|  按键  |   功能说明 |
+|--------|-------------|
+| alt + super + j | 下一个诊断 |
+| alt + super + k | 上一个诊断 |
+
+
+### Git 管理
+
+|  按键  |   功能说明 |
+|--------|-------------|
+|super + x f |  git keyMenu |
+
+
+### Python 代码块
+
+|  按键  |   功能说明 |
+|--------|-------------|
+| ctrl + shift + y |  粘贴后简单的向右 |
+| ctrl + shift + j |  选中向左移动 |
+| ctrl + shift + k |  选中向右移动 |
+
+[矩形操作](https://github.com/manateelazycat/lazycat-emacs/blob/master/site-lisp/config/init-key.el#L194)
+
+|  按键  |   功能说明 |
+|--------|-------------|
+| super + shift + m |  开始矩形操作 |
+| super + shift + f |  选中空格 |
+| super + shift + i |  插入 |
+| super + shift + d |  删除 |
+
+### 音乐播放器
+
+|  按键  |   功能说明 |
+|--------|-------------|
+| super + 1 |  全局随机播放 |
+| super + 2 |  全局暂停/继续播放 |
+| super + 3 |  唤出播放器 |
+
+
+### [代码阅读模式] (https://github.com/manateelazycat/lazycat-emacs/blob/master/site-lisp/config/init-easy-nav.el#L94C1-L94C1)
+
+|  按键  |   功能说明 |
+|--------|-------------|
+| ctrl + super + l |  进入代码阅读模式 |
+| q |  退出 |
+
+### markdown 预览
+
+|  按键  |   功能说明 |
+|--------|-------------|
+| ctrl + c  ctrl + c |  在 md 文件中直接打开预览 |
+
+
