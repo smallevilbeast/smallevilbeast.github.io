@@ -154,6 +154,7 @@ pip install ruff-lsp pyright
 ```
 [详情](https://github.com/manateelazycat/lazycat-emacs/blob/master/site-lisp/config/init-key.el#L536)
 
+
 |  按键  |   功能说明 |
 |--------|-------------|
 | alt + super + j | 下一个诊断 |
@@ -193,7 +194,9 @@ pip install ruff-lsp pyright
 | super + 3 |  唤出播放器 |
 
 
-### [代码阅读模式] (https://github.com/manateelazycat/lazycat-emacs/blob/master/site-lisp/config/init-easy-nav.el#L94C1-L94C1)
+### 代码阅读模式
+
+[详情](https://github.com/manateelazycat/lazycat-emacs/blob/master/site-lisp/config/init-easy-nav.el#L94C1-L94C1)
 
 |  按键  |   功能说明 |
 |--------|-------------|
