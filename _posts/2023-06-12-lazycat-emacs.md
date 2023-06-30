@@ -80,6 +80,48 @@ cd lazycat-emacs/site-lisp/extensions/emacs-application-framework
 
 ```
 
+### 开发 EAF 扩展配置
+
+在`.emacs`中添加
+
+```lisp
+;; Support jump to define of EAF root from EAF application directory.
+(setq lsp-bridge-get-project-path-by-filepath
+      (lambda (filepath)
+        (when (string-prefix-p (expand-file-name "~/lazycat-emacs/site-lisp/extensions/emacs-application-framework/app") filepath)
+          (expand-file-name "~/lazycat-emacs/site-lisp/extensions/emacs-application-framework/"))))
+
+```
+
+
+### eaf 中的 python 使用 pyenv
+
+```bash
+# 在原来的 python 环境下导出依赖包
+pip freeze > requirements.txt 
+
+python -m venv emacs_venv
+source emacs_venv/bin/activate 
+pip install -r requirements.txt
+```
+
+添加启动 emacs 的脚本 start_emacs.sh
+
+```bash
+#!/bin/bash
+exec zsh -c 'source /home/evilbeast/emacs_venv/bin/activate; exec emacs "$@"' -- "$@"
+```
+
+### eaf gdb 调试运行
+
+在.emacs 中添加 
+
+```lisp
+;; debug
+(setq eaf-enable-debug t)
+```
+
+
 ### 启动 emacs 并安装所需语言的 treesit
 
 按下 `alt + x` 输入 `treesit-install-language-grammar` 安装所用语言的 treesit, 如 python, rust, vue
@@ -131,19 +173,6 @@ cd lazycat-emacs/site-lisp/extensions/emacs-application-framework
 | alt + shift + n | 剪切前一个分词|
 | alt + shift + m | 剪切后一个分词|
 
-
-### 开发 EAF 扩展配置
-
-在`.emacs`中添加
-
-```lisp
-;; Support jump to define of EAF root from EAF application directory.
-(setq lsp-bridge-get-project-path-by-filepath
-      (lambda (filepath)
-        (when (string-prefix-p (expand-file-name "~/lazycat-emacs/site-lisp/extensions/emacs-application-framework/app") filepath)
-          (expand-file-name "~/lazycat-emacs/site-lisp/extensions/emacs-application-framework/"))))
-
-```
 
 
 ### 导航诊断
@@ -208,5 +237,6 @@ pip install ruff-lsp pyright
 |  按键  |   功能说明 |
 |--------|-------------|
 | ctrl + c  ctrl + c |  在 md 文件中直接打开预览 |
+
 
 

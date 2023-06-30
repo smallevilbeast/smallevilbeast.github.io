@@ -27,7 +27,7 @@ git config --global --add safe.directory /mnt/data/xxxx
 通过上面配置解决了`git`可疑所有权的问题， 但在 `nodejs` 项目 `npm install`时会提示写入和执行权限的问题， 我怀疑是 `npm install`会使用其他 `uid`来处理， 尝试改变了下权限， 如下：
 
 ```bash
-/dev/disk/by-uuid/xxxxxxxx /mnt/data ntfs defaults,nofail,utf8,uid=1000,gid=1000,dmask=002,fmask=113 0 0
+/dev/disk/by-uuid/xxxxxxxx /mnt/data ntfs defaults,nofail,utf8,uid=1000,gid=1000,dmask=002,fmask=013 0 0
 ```
 目前所遇到的问题都解决了 :)
 
