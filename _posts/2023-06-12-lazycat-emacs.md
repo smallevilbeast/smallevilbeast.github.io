@@ -121,6 +121,13 @@ exec zsh -c 'source /home/evilbeast/emacs_venv/bin/activate; exec emacs "$@"' --
 (setq eaf-enable-debug t)
 ```
 
+### eaf 登录 google
+
+在 .emacs 中添加
+```lisp
+(setq eaf-webengine-pc-user-agent "Mozilla/5.0 ({os_info}; rv:90.0) Gecko/20100101 Firefox/90.0")
+```
+
 
 ### 启动 emacs 并安装所需语言的 treesit
 
