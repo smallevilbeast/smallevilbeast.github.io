@@ -240,7 +240,7 @@ pip install deepsparse[server,yolo,onnxruntime,yolov8]
 ```bash
 deepsparse.server \                                   
     --task yolov8 \
-    --model_path /home/evilbeast/Data/ai/chopsticks/runs/detect/train/weights/best.pt
+    --model_path /home/evilbeast/Data/ai/chopsticks/runs/detect/train/weights/best.onnx
 ```
 
 docs 
