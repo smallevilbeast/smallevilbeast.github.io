@@ -4,6 +4,11 @@ title: rust 代码片段
 categories: [rust]
 ---
 
+### 书籍
+
+[【Rust 秘典（死灵书）】](https://nomicon.purewhite.io/intro.html)  可参考如何实现一个 Vec
+[【Rust 圣经】](https://course.rs/about-book.html)
+
 ### 使用元组结构体和 Deref 定义新类型
 
 实现 Deref 特征后， 可以自动做一层类似类型转换的操作， 可以将 NewString 变成 String 来使用。 这样就会像直接使用 String 那样去使用 NewString， 而无需为每一个操作都添加上 self.0。
