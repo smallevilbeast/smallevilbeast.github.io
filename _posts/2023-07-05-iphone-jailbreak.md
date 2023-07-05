@@ -6,7 +6,7 @@ categories: [jailbreak]
 
 ### palera1n
 
-目前palera1n适用于 iOS 15.0-16.5 上的 checkm8 设备 (A8-A11), 我手上这台是`iPhone 8 Plus`, CPU是`A11`, OS是 `15.0.2` 刚好满足，不过由于 iOS 15 之后引入的 Signed System Volume (SSV) 安全措施，无论是基于 checkm8 的 palera1n 还是基于 Fugu 系列的 Dopamine 都不再挂载 rootfs ，叫 rootless 模式
+目前 palera1n 适用于 iOS 15.0-16.5 上的 checkm8 设备 (A8-A11), 我手上这台是`iPhone 8 Plus`, CPU 是`A11`, OS 是 `15.0.2` 刚好满足， 不过由于 iOS 15 之后引入的 Signed System Volume (SSV) 安全措施， 无论是基于 checkm8 的 palera1n 还是基于 Fugu 系列的 Dopamine 都不再挂载 rootfs ， 叫 rootless 模式
 
 在 [palera1n releases](https://github.com/palera1n/palera1n/releases) 页面下载 `palera1n-macos-x86_64`, 后在终端执行
 
@@ -15,7 +15,7 @@ chmod +x ./palera1n-macos-x86_64
 ./palera1n-macos-x86_64
 ```
 
-过程如下，注意要先按 `音量减键` + `电源键`， 然后看提示只放开`电源键`
+过程如下， 注意要先按 `音量减键` + `电源键`， 然后看提示只放开`电源键`
 
 
 ```bash
@@ -73,49 +73,55 @@ Hold volume down button (3)
  - [07/05/23 12:52:03] <Info>: Booting Kernel...
  ```
 
-### 安装Sileo
+### 安装 Sileo
 
-进入系统后会看到 `palera1n` 的应用，首次会提示设置`mobile`用户的密码， 后面可以连ssh用， 打开后安装 `Sileo` 软件商店工具，添加 `https://cydia.akemi.ai/` 源安装
+进入系统后会看到 `palera1n` 的应用， 首次会提示设置`mobile`用户的密码， 后面可以连 ssh 用， 打开后安装 `Sileo` 软件商店工具， 添加 `https://cydia.akemi.ai/` 源安装
 
 1. appinst
 2. AppSync Unified
 3. xz-utils
 
-### 通过usb连接ssh
+### 通过 usb 连接 ssh
 
 改端口
 ```bash
 alias usbproxy='nohup iproxy 2222 22 > /dev/null 2>&1 &'
 ```
 
-先使用`mobile`账号连接手机ssh
+先使用`mobile`账号连接手机 ssh
 
 ```bash
 ssh -p 2222 mobile@localhost
 ```
-改root密码 (旧密码: alpine)
+改 root 密码 (旧密码: alpine)
 
 ```bash
 sudo passwd root
 ```
 
-设置zshrc
+设置 zshrc
 
 ```bash
 alias usbproxy='nohup iproxy 2222 22 > /dev/null 2>&1 &'
 alias usbssh='ssh -p 2222 root@localhost'
 ```
 
+### 安装 frida
 
-### 安装frida
+在 sileo 中添加源
 
-目前frida还没有适配rootless模式，不能通过软件源安装，只能手动安装，从 [frida releases](https://github.com/frida/frida/releases) 下载 `frida_xx.x.x_iphoneos-arm.deb` 使用 `ar -x frida_xx.x.x_iphoneos-arm.deb` 解压出 `data.tar.xz`, 将`data.tar.xz`复制到手机的`/tmp`目录
+`https://miticollo.github.io/repos/my` 
+
+安装即可， 如果失效可以用下面的方式
+
+
+### 手动安装并运行 frida
+
+目前 frida 还没有适配 rootless 模式， 不能通过软件源安装， 只能手动安装， 从 [frida releases](https://github.com/frida/frida/releases) 下载 `frida_xx.x.x_iphoneos-arm.deb` 使用 `ar -x frida_xx.x.x_iphoneos-arm.deb` 解压出 `data.tar.xz`, 将`data.tar.xz`复制到手机的`/tmp`目录
 
 ```bash
 scp -P 2222 data.tar.xz root@127.0.0.1:/tmp/
 ```
-
-### 运行frida
 
 解压`data.tar.xz` 
 
