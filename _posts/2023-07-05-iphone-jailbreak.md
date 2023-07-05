@@ -125,3 +125,12 @@ tar -xf data.tar.xz -C frida/
 CRYPTEX_MOUNT_PATH=/tmp/frida /tmp/frida/usr/sbin/frida-server
 ```
 最后在本机使用 `frida-ps -U` 验证
+
+测试没问题将 `frida` 目录移动到 `/var/jb/var/root/` 目录下
+
+start_frida.sh
+
+```bash
+#!/bin/sh
+CRYPTEX_MOUNT_PATH=/var/jb/var/root/frida /var/jb/var/root/frida/usr/sbin/frida-server > /dev/null 2>&1 &
+```
