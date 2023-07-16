@@ -13,7 +13,8 @@ categories: [Emacs]
 
 安装必要的编译工具和库
 ```bash
-sudo apt install build-essential libncurses-dev libgnutls28-dev libjansson4 git
+sudo apt install build-essential libncurses-dev libgnutls28-dev libjansson4 git autoconf texinfo libgtk-3-dev libxmp-dev libtiff-dev
+sudo apt install libxpm-dev libgif-dev libjansson-dev
 ```
 下载&编译 emacs
 ```
@@ -21,7 +22,7 @@ git clone --depth 1 git://git.savannah.gnu.org/emacs.git
 cd emacs
 ./autogen.sh
 ./configure
-./make
+make -j 32
 sudo make install
 ```
 下载 lazycat-emacs
