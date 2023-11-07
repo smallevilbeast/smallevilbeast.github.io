@@ -67,6 +67,21 @@ F => Segment Limit
 B => Type(1011)
 ```
 
+使用 windbg 写入
+
+```bash
+dq 80B98848 8ECF9B4B`F6B8FFFF
+```
+
+### 修改 IDT 表中的中断描述符
+
+将原来的 `0008` 修改成 `0048`
+
+```bash
+dq 80B98018 83E8EE00`0048BFC0
+```
+
+
 ## 代码实现
 
 KernelUtil 代码
