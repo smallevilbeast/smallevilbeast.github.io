@@ -224,6 +224,9 @@ int _tmain(int argc, _TCHAR* argv[])
 
 ### 测试结果
 
+从 windbg 中获取参数:
+![test result](/pics/win32_kernel_int3_hook/get_params.jpg)
+
 程序运行截图：
 ![test result](/pics/win32_kernel_int3_hook/demo.jpg)
 
